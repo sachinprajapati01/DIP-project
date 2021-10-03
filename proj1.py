@@ -1,3 +1,5 @@
+#Helper code of main code subway.py to find lower bound and upper bound of your video frame 
+#for perfect masking according to object or hand color and background 
 import cv2
 import numpy as np
 
@@ -21,7 +23,6 @@ while(1):
     _, frame = vid.read()
     
     frame = cv2.flip(frame,1)
-    #frame = frame[:300,100:300]
     frame = cv2.GaussianBlur(frame,(5,5),0)
     
     #(232, 190, 172)
@@ -35,7 +36,6 @@ while(1):
     upper_skin = np.array([r_high,g_high,b_high])
 
     mask = cv2.inRange(frame, lower_skin, upper_skin)
-    # res = cv2.bitwise_and(frame,frame, mask= mask)
     cv2.imshow('image', frame)
     cv2.imshow('segmentation',mask)  
     if cv2.waitKey(1) & 0xFF == ord('q'):

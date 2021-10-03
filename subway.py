@@ -2,9 +2,10 @@
 import cv2 
 import pyautogui
 import numpy as np
-#cv2 is main library used here in DIP Project for function like VideoCapture
+#cv2 is main library used here in DIP Project for function like VideoCapture,
 # inRange ,contours,drawing circle lines and many more
 #pyautogui library is mainly used for press function help to press keys
+#numpy is used for array
 vid = cv2.VideoCapture(0)#cv2 function to start capturing video
 prev_pos = "neutral"  #previous postion of moments(center of mass contours)
 
